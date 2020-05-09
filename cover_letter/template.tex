@@ -1,0 +1,176 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[$fontsize$, a4paper]{article}
+
+% LAYOUT
+%--------------------------------
+% Margins
+\usepackage{geometry}
+\geometry{$geometry$}
+
+% Do not indent paragraphs
+\setlength\parindent{0in}
+
+% Enable multicolumns
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{black}}
+
+% Uncomment to suppress page numbers
+\pagenumbering{gobble}
+
+% LANGUAGE
+%--------------------------------
+% % Set the main language
+% $if(lang)$
+% \usepackage{polyglossia}
+% \setmainlanguage{$lang$}
+% $endif$
+%
+% TYPOGRAPHY
+%--------------------------------
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fontmfizz}
+\usepackage{fontawesome}
+\usepackage{sourcesanspro}
+\usepackage{ragged2e}
+% converts LaTeX specials (quotes, dashes etc.) to Unicode
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{$mainfont$}
+
+\newfontfamily\fatest{font-mfizz.ttf}
+\newfontfamily{\FA}{FontAwesome.otf}
+
+% MARGIN NOTES
+%--------------------------------
+\usepackage{marginnote}
+\newcommand{\note}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+%--------------------------------
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\rmfamily\mdseries}
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+% PDF SETUP
+%--------------------------------
+\usepackage{hyperref}
+\hypersetup
+{pdfauthor={$name$},
+  pdfsubject={$name$'s $filetype$},
+  pdftitle={$name$'s $filetype$},
+  colorlinks, breaklinks, xetex, bookmarks,
+  filecolor=black,
+  urlcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  citecolor=[rgb]{0.117,0.682,0.858}
+}
+
+% DOCUMENT
+%--------------------------------
+\begin{document}
+\begin{center}
+
+	% NAME
+	%-------------------------------
+	{\Huge $name$}$if(suffix)$,  {\large $suffix$}\\[.2cm]$endif$
+
+	% \vspace{2pt}
+	\begin{multicols}{3}
+		% CONTACT
+		%------------------------------
+		$phone$
+		\columnbreak
+
+		$if(blog)$
+		\href{http://$blog$}{{\FA \faRss}$blog$}
+		$endif$
+		% \vspace{2pt}
+
+		$if(github)$
+		\href{http://github.com/$github$}{{\FA \faGithub}$github$}
+		$endif$
+		% \vspace{2pt}
+
+		$if(emailprefix)$
+		$if(emailsuffix)$
+		\href{mailto:$emailprefix$@$emailsuffix$}{{\FA \faEnvelope}$emailprefix$@$emailsuffix$}
+		$endif$
+		$endif$
+
+		\columnbreak
+
+		$for(address)$
+		$address$\\
+		$endfor$
+
+	\end{multicols}
+\end{center}
+
+
+\vspace{-20pt}
+\rule{15cm}{0.04cm}
+\noindent
+\large
+\vspace{10pt}
+
+% TODAY'S DATE
+%------------------------------
+\begin{flushright}
+\today\\
+\end{flushright}
+
+
+% COMPANY INFO
+%------------------------------
+$if(companyinfo)$
+\begin{flushleft}
+	$for(companyinfo)$
+		\textbf{$companyinfo.name$}\\
+		$for(companyinfo.address)$
+			$companyinfo.address$\\
+		$endfor$
+	$endfor$
+\end{flushleft}
+$endif$
+
+
+% Letter Body
+%------------------------------
+\vspace{4pt}
+\begin{flushleft}
+$letter.person$\\
+\end{flushleft}
+
+\justify
+I am writing for the application of '\textbf{$companyinfo.application$}'
+$letter.where$\\
+\par
+$letter.what$\\
+\par
+$letter.why$ $letter.whyspec$ Most of all,$companyinfo.name$'s $letter.whycont$\\
+\par
+$letter.how$\\
+\par
+
+% YOURS SECTION
+%------------------------------
+$if(yours)$
+\begin{flushleft}
+	$for(yours)$
+		$yours.greeting$\\
+		$yours.name$\\
+	$endfor$
+\end{flushleft}
+$endif$
+
+\end{document}
