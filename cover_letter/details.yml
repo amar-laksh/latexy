@@ -12,17 +12,19 @@ address:
     - "Birmingham, UK - B29 6FQ"
 
 companyinfo:
-  application: "Staff Security Engineer"
-  name: "Citrix Systems"
+  application: "Security Engineer"
+  name: "Capgemini"
   address:
-    - "Cambridge, United Kingdom"
+    - "Stafford Park 11"
+    - "Telford"
+    - "Shropshire TF3 3AY"
 
 letter:
   person: "To the Hiring Manager,"
-  where: "that I came across from your careers website. I will graduate in September 2020 from the University Of Birmingham and expect to achieve a 2:1 GCHQ certified MSc. Cyber Security."
+  where: "that I came across from your careers website. I have already achieved my CompTIA Security+ Certification and will graduate in September 2020 from the University Of Birmingham with an expected 2:1 GCHQ certified MSc. Cyber Security."
   what: "Innovation, Initiative and Discipline have always been my guiding tenets in life. My three-month long internship at Apogee Global Inc. enabled me to understand the nuances of Software Architecture, Cyber Security, Networks and Engineering by working on a complete user-centric anti-virus security suite. This was followed by an eight-month internship and six-month long job at Nymble Labs Pvt.Ltd. where I designed a ROS2 based distributed and secure system for an automated cooking robot, the company's signature product. All along, I have continuously tried to contribute to Free and Open Source software projects and have successfully done so for the Mozilla Foundation, KDE Project and the IPFS Project. Constant and consistent professional and personal growth has always been the top priority."
-  why: "I am particularly interested in this position as it provides me with an opportunity to put my academic expertise in Cyber Security and the experience with software architecture and design to satisfying and ethical use by joining not only a leader but a beacon of integrity and excellence in the industry."
-  whyspec: "I believe my passion for instilling change and helping people through my digital skills can be incredibly useful to an Institution dedicated to providing people the freedom to work and grow in their own ways."
+  why: "I am particularly interested in this position as it provides me with an opportunity to put my academic expertise in Cyber Security and the experience with software engineering, threat analysis, and management to satisfying and ethical use by joining not only a leader but a beacon of integrity and excellence in the industry."
+  whyspec: "I believe my passion for instilling change and helping people through my digital skills can be incredibly useful to an Institution dedicated to providing people simple yet brilliant ways to collaborate and grow together."
   whycont: "unique cooperative and supportive culture promises a nurturing environment for any curious soul."
   how: "I can be easily reached at any time through the above-mentioned contact information. I thank you for considering my application and look forward to discussing it with you in the near future."
 
