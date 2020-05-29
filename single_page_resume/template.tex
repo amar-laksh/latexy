@@ -1,0 +1,299 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[$fontsize$, a4paper]{article}
+
+% LAYOUT
+%--------------------------------
+% Margins
+\usepackage{geometry}
+\geometry{$geometry$}
+
+% Do not indent paragraphs
+\setlength\parindent{0in}
+
+% Enable multicolumns
+\usepackage{color}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+% \setlength{\columnseprule}{1pt}
+% \def\columnseprulecolor{\color{black}}
+
+% Uncomment to suppress page numbers
+\pagenumbering{gobble}
+
+% LANGUAGE
+%--------------------------------
+% % Set the main language
+% $if(lang)$
+% \usepackage{polyglossia}
+% \setmainlanguage{$lang$}
+% $endif$
+%
+% TYPOGRAPHY
+%--------------------------------
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fontmfizz}
+\usepackage{fontawesome}
+\usepackage{sourcesanspro}
+% converts LaTeX specials (quotes, dashes etc.) to Unicode
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{$mainfont$}
+
+\newfontfamily\fatest{font-mfizz.ttf}
+\newfontfamily{\FA}{FontAwesome.otf}
+
+% MARGIN NOTES
+%--------------------------------
+\usepackage{marginnote}
+\newcommand{\note}[1]{\marginnote{\scriptsize #1}}
+\newcommand{\reversenote}[1]{\reversemarginpar \marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+%--------------------------------
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\rmfamily\mdseries}
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+% PDF SETUP
+%--------------------------------
+\usepackage{hyperref}
+\hypersetup
+{
+  pdfauthor={$name$},
+  pdfsubject={$name$'s $filetype$},
+  pdftitle={$name$'s $filetype$},
+  colorlinks, breaklinks, xetex, bookmarks,
+  filecolor=black,
+  urlcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  citecolor=[rgb]{0.117,0.682,0.858}
+}
+
+% DOCUMENT
+%--------------------------------
+\begin{document}
+\begin{center}
+
+	% NAME
+	%-------------------------------
+	{\Huge $name$}$if(suffix)$,  {\large $suffix$}\\[.2cm]$endif$
+
+	% \vspace{2pt}
+	\begin{multicols}{3}
+		% CONTACT
+		%------------------------------
+		$for(phone)$
+		$phone$\\
+		$endfor$
+		\columnbreak
+
+		$if(blog)$
+		\href{http://$blog$}{{\FA \faRss}$blog$}
+		$endif$
+		% \vspace{2pt}
+
+		$if(github)$
+		\href{http://github.com/$github$}{{\FA \faGithub}$github$}
+		$endif$
+		% \vspace{2pt}
+
+		$if(emailprefix)$
+		$if(emailsuffix)$
+		\href{mailto:$emailprefix$@$emailsuffix$}{{\FA \faEnvelope}$emailprefix$@$emailsuffix$}
+		$endif$
+		$endif$
+
+		\columnbreak
+
+		$for(address)$
+		$address$\\
+		$endfor$
+
+	\end{multicols}
+
+	% QUOTE
+	%------------------------------
+	% \vspace{1pt}
+	{\emph{`$quote$`}}
+\end{center}
+
+% INTRO
+%------------------------------
+$if(intro)$
+$intro$
+$endif$
+
+\vspace{-25pt}
+
+% PROJECTS & RESEARCH
+%------------------------------
+
+$if(projects)$
+\section*{Projects \& Contributions}
+\vspace{-20pt}
+\rule{15cm}{0.04cm}%
+\noindent
+$for(projects)$
+
+\note{\Huge \MF \mf$projects.language$}
+
+\underline {\textsc {$projects.project$} } : $if(projects.url)$ {\small \it {\href{http://$projects.url$}{$projects.url$}} $endif$
+
+\begin{itemize}
+		$for(projects.desc)$
+	\item $projects.desc$
+		\vspace{-4pt}
+		$endfor$
+\end{itemize}
+$endfor$
+$endif$
+
+\vspace{-15pt}
+
+% WORK EXPERIENCE
+%-----------------------------
+$if(experience)$
+\section*{Work Experience}
+\vspace{-19pt}
+\rule{15cm}{0.04cm}%
+\noindent
+$for(experience)$
+	\note{$experience.years$}
+	\underline{\textsc {$experience.job$}}: {\small \it{$experience.employer$} ($experience.city$)}
+	\vspace{-2pt}
+	\begin{itemize}
+			$for(experience.desc)$
+		\item $experience.desc$
+			\vspace{-4pt}
+			$endfor$
+	\end{itemize}
+% \vspace{10pt}
+$endfor$
+$endif$
+
+\vspace{-15pt}
+
+% PUBLICATIONS
+%----------------------------
+$if(publications)$
+\section*{Publications \& Certifications}
+\vspace{-19pt}
+\rule{15cm}{0.04cm}%
+\noindent
+$for(publications)$
+
+\note{$publications.year$}
+
+\underline{\textsc {$publications.project$} }: $if(publications.url)$ {\small \it {\href{http://$publications.url$}{$publications.url$}} $endif$
+$if(publications.desc)$
+\begin{itemize}
+	$for(publications.desc)$
+		\item $publications.desc$
+	$endfor$
+\end{itemize}
+$endif$
+$endfor$
+$endif$
+
+\vspace{-15pt}
+
+% EDUCATION
+%----------------------------
+$if(education)$
+\section*{Education \& Skills}
+\vspace{-19pt}
+\rule{15cm}{0.04cm}%
+\vspace{-12pt}
+\begin{multicols*}{3}
+\noindent
+$for(education)$
+\textbf {$if(education.degree)$ $education.degree$$endif$}, \\
+\vspace{-1pt} \emph{$education.institute$}$if(education.country)$, $education.country$$endif$ \\
+\vspace{-1pt} {\scriptsize $education.year$} \\
+\vspace{-1pt} {\scriptsize{$if(education.marks)$ \textbf{$education.marks$} $endif$} } \\
+\vspace{-5pt}
+\emph{Topics Covered:}
+$if(education.modules)$
+\begin{itemize}
+	$for(education.modules)$
+		\item $education.modules$
+		\vspace{-4pt}
+	$endfor$
+\end{itemize}
+$endif$
+\columnbreak
+$endfor$
+$endif$
+
+\columnbreak
+% SKILLS
+%-----------------------------
+$if(skills)$
+$for(skills)$
+	\note{$skills.years$}
+	\underline{\textsc {$skills.section$}}:
+	\newline
+		$for(skills.desc)$
+	{\Large \MF \mf$skills.desc$}
+		\hspace {-0.7pt}
+		$endfor$
+	\newline
+% \vspace{10pt}
+$endfor$
+$endif$
+
+\end{multicols*}
+
+
+% POSITION OF RESPONSIBILITY
+%-----------------------------
+$if(position_of_responsibility)$
+\section*{Positions Of Responsibility}
+\vspace{-19pt}
+\rule{15cm}{0.04cm}%
+\noindent
+$for(position_of_responsibility)$
+	\note{$position_of_responsibility.years$}
+	\underline{\textsc {$position_of_responsibility.job$}}: {\small \it{$position_of_responsibility.employer$}
+	\begin{itemize}
+			$for(position_of_responsibility.desc)$
+		\item $position_of_responsibility.desc$
+			\vspace{2pt}
+			$endfor$
+	\end{itemize}
+% \vspace{10pt}
+$endfor$
+$endif$
+
+
+\begin{multicols}{2}
+
+
+% REFERENCES
+%----------------------------
+\columnbreak
+$if(references)$
+\section*{References}
+\noindent
+$for(references)$
+\emph{$references.name$}\\
+{$references.organization$}\\
+{$references.designation$}\\
+{$references.contact$}\\
+$endfor$
+$endif$
+
+
+
+\end{multicols}
+
+
+\end{document}
