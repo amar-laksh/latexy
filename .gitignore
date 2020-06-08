@@ -6,4 +6,6 @@
 *.fdb_latexmk
 *.bbl
 *.blg
+*.bcf
+*.xml
 Amar_Lakshya_*.pdf
