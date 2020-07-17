@@ -1,6 +1,6 @@
 ---
 name: "Amar Lakshya"
-suffix:
+suffix: "MSc, BSc, Sec+"
 phone:
     - "+44 7873 957 151"
     - "+91 9412 256 677"
@@ -166,7 +166,7 @@ education:
         institute: "University Of Birmingham"
         country: "UK"
         marks:
-          - "2:1 Expected"
+          - "Distinction Expected"
         modules:
                 - Cryptography and Data Analysis
                 - Operating Systems and Network Security
@@ -177,7 +177,7 @@ education:
         degree: "BSc. Info. Technology"
         institute: "St. Xaviers College"
         country: "India"
-        marks: "3.26/4.00"
+        marks: "2:1"
         modules:
                 - Applied Mathematics
                 - C++ Programming
