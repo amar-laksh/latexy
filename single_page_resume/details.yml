@@ -1,6 +1,6 @@
 ---
 name: "Amar Lakshya"
-suffix: "MSc, BSc, Sec+"
+suffix: ""
 phone:
     - "+44 7873 957 151"
     - "+91 9412 256 677"
@@ -15,51 +15,52 @@ address:
 quote: "A Chemical Computer computing on Digital Computers"
 projects:
     -
-        language: C
+        years: "April 2020"
         project: "Logi's Circle of Security"
         url: github.com/amar-laksh/Logitech_pentest/blob/master/Report.pdf
         desc:
             - "A full Penetration test conducted on Logitech's Circle camera."
             - "The test showed that the Logi Circle is well-secured."
     -
-        language: C
+        years: "October 2019"
         project: "fOS - Made to be Open"
         url: github.com/amar-laksh/fOS
         desc:
             - "A Monolithic UNIX-like Kernel for the x86 and ARM (Raspberry Pi) platforms."
             - "ELF Parsing(with kernel parsing), PCI, Serial (ARM), Western Notes for PC Beeper and System Calls."
     -
-        language: Python
+        years: "November 2019"
         project: TryingToKnowYouBetter
         url: github.com/amar-laksh/TryinToKnowYouBetter
         desc:
             - "The Indian Election Commission's website leaks data that can be analysed to effectively locate all registered voters."
     -
-        language: Python
-        project: study of captchas
-        url: amar-laksh.github.io/2017/03/16/CAPTCHAs-on-ceo-sites.html
-        desc:
-            - "An extensive study of CAPTCHA systems present on The Election Commission Of India's websites across all the states in India."
-    -
-        language: Cplusplus
+        years: "September 2018"
         project: "Cache patch (Core), Mozilla Contribution"
         url: "git log | grep amar on codebase"
         desc:
             - "Worked on patching cache entries that expire immediately in the Cache core of Mozilla codebase."
             - "Affects all Mozilla programs including Firefox and Thunderbird."
     -
-        language: Python
+        years: "April 2018"
         project: Vitae
         url: github.com/amar-laksh/vitae
         desc:
             - "An Esoteric, Interpreted python-built language built entirely with regular expressions."
             - "Designed to introduce non-technical people to programming."
     -
-        language: JavascriptAlt
+        years: "July 2017"
         project: Replaycer
         url: addons.mozilla.org/en-US/firefox/addon/replaycer
         desc:
             - "A fun Browser Add-on to replace content on the web that replaces live content like twitter feeds etc."
+
+    -
+        years: "March 2017"
+        project: study of captchas
+        url: amar-laksh.github.io/2017/03/16/CAPTCHAs-on-ceo-sites.html
+        desc:
+            - "An extensive study of CAPTCHA systems present on The Election Commission Of India's websites across all the states in India."
 #     -
         # language: Python
         # project: FocusTV
