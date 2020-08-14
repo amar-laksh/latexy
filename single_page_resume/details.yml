@@ -3,15 +3,10 @@ name: "Amar Lakshya"
 suffix: ""
 phone:
     - "+44 7873 957 151"
-    - "+91 9412 256 677"
 github: amar-laksh
 blog: amar-laksh.github.io
 emailprefix: amar.lakshya
 emailsuffix: protonmail.com
-address:
-    - "Flat 20"
-    - "Jarratt Hall, Dale Road"
-    - "Birmingham, UK - B29 6FQ"
 quote: "A Chemical Computer computing on Digital Computers"
 projects:
     -
