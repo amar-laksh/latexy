@@ -7,4 +7,4 @@ Amar_Lakshya.pdf : $(src)
 
 .PHONY: clean
 clean :
-	rm Amar_lakshya.pdf
+	rm *.aux *.log *.pdf *.spl *.gz *.fls *.fdb_latexmk *.bbl *.blg
